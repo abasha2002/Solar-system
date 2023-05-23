@@ -11,23 +11,22 @@ body{
 }
 .galaxy{
   position: relative;
-  height: 900px;
-  width: 900px;
-  font-size: 10px;
+  height: 100%;
+  width: 100%;
 }
 .sun{
   position: absolute;
   background-color: yellow;
   width: 10em;
   height: 10em;
-  right: 46.6%;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   box-shadow: 20px 20px 100px white;
 }
 
-.earth, .mercury, .venus{
+.earth-orbit, .mercury-orbit, .venus-orbit{
   position: absolute;
   border-style: solid;
   border-color:indigo ;
@@ -35,33 +34,49 @@ body{
   border-radius: 50%;
 }
 
-.mercury{
+.mercury-orbit{
     width: 15em;
     height: 15em;
-    right: 43.9%;
-    top: 41.4%;
-    animation: orbit 10s linear infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
-.venus{
+.mercury{
+  height: 100%;
+  animation: orbit 10s linear infinite;
+}
+.venus-orbit{
   width: 30em;
   height: 30em;
-  right: 35%;
-  top: 34%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.venus{
+  height: 100%;
   animation: orbit 20s linear infinite;
 }
-.earth{
-  top: 22%;
-  right: 24.8%;
+.earth-orbit{
+  left: 50%;
+  top: 50%;
   width: 50em;
   height: 50em;
+  transform: translate(-50%, -50%);
+}
+.earth{
+  height: 100%;
   animation: orbit 36.5s linear infinite;
 }
-.moon{
+.moon-orbit{
   position: absolute;
-  top: 13%;
-  right: 3px;
+  top: -64px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 8em;
   height: 8em;
+}
+.moon{
+  height: 100%;
   animation: orbit 2.7s linear infinite;
 }
 
@@ -71,8 +86,9 @@ body{
   border-radius: 50%;
 }
 .earth::before{
-  top: 9.2em;
-  right: 2.8em;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 3em;
   height: 3em;
   background-color:aqua ;
@@ -81,8 +97,8 @@ body{
   background-color: silver;
   width: 1.2em;
   height: 1.2em;
-  right: 0.2em;
-  top: 0.8em;
+  right: 0;
+  top: 0;
 }
 .mercury::before{
   width: 1.8em;
