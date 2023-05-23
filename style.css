@@ -1,0 +1,104 @@
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./galaxy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.galaxy{
+  position: relative;
+  height: 900px;
+  width: 900px;
+  font-size: 10px;
+}
+.sun{
+  position: absolute;
+  background-color: yellow;
+  width: 10em;
+  height: 10em;
+  right: 46.6%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: 20px 20px 100px white;
+}
+
+.earth, .mercury, .venus{
+  position: absolute;
+  border-style: solid;
+  border-color:indigo ;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 50%;
+}
+
+.mercury{
+    width: 15em;
+    height: 15em;
+    right: 43.9%;
+    top: 41.4%;
+    animation: orbit 10s linear infinite;
+}
+.venus{
+  width: 30em;
+  height: 30em;
+  right: 35%;
+  top: 34%;
+  animation: orbit 20s linear infinite;
+}
+.earth{
+  top: 22%;
+  right: 24.8%;
+  width: 50em;
+  height: 50em;
+  animation: orbit 36.5s linear infinite;
+}
+.moon{
+  position: absolute;
+  top: 13%;
+  right: 3px;
+  width: 8em;
+  height: 8em;
+  animation: orbit 2.7s linear infinite;
+}
+
+.earth::before, .moon::before, .mercury::before, .venus::before{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+.earth::before{
+  top: 9.2em;
+  right: 2.8em;
+  width: 3em;
+  height: 3em;
+  background-color:aqua ;
+}
+.moon::before{
+  background-color: silver;
+  width: 1.2em;
+  height: 1.2em;
+  right: 0.2em;
+  top: 0.8em;
+}
+.mercury::before{
+  width: 1.8em;
+  height: 1.8em;
+  background-color: slategrey;
+  top: 0;
+  right: 3.5em;
+}
+.venus::before{
+  width: 2.5em;
+  height: 2.5em;
+  background-color: crimson;
+  right: 27%;
+}
+@keyframes orbit {
+  to{
+    transform: rotate(360deg);
+  }
+}
